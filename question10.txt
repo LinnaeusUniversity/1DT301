@@ -1,0 +1,106 @@
+#include <stdio.h>
+
+//Represent a node of the singly linked list
+struct node{
+    int data;
+    struct node *next;
+};
+
+//Represent the head and tail of the singly linked list
+struct node *head, *tail = NULL;
+
+//addNode() will add a new node to the list
+void addNode(int data) {
+    //Create a new node
+    struct node *newNode = (struct node*)malloc(sizeof(struct node));
+    newNode->data = data;
+    newNode->next = NULL;
+
+    //Checks if the list is empty
+    if(head == NULL) {
+        //If list is empty, both head and tail will point to new node
+        head = newNode;
+        tail = newNode;
+    }
+    else {
+        //newNode will be added after tail such that tail's next will point to newNode
+        tail->next = newNode;
+        //newNode will become new tail of the list
+        tail = newNode;
+    }
+}
+
+
+//display() will display all the nodes present in the list
+void display() {
+    //Node current will point to head
+    struct node *current = head;
+    if(head == NULL) {
+        printf("List is empty \n");
+        return;
+    }
+    int arrayLength=6;// i need to get the length of my linkedlist
+    int i=0;
+    while(current != NULL && i<arrayLength) {
+        //Prints each node by incrementing pointer
+
+        if(i<(arrayLength/2)){
+                 printf("%d ", current->data);
+             current = current->next;
+        }
+        if(i>=(arrayLength/2)){
+            struct node *secondHead=head;
+            //struct node *current = head;
+            struct node *temp=NULL;
+            temp=current;
+            current=secondHead;
+            secondHead=temp;
+           // printf("i=%d\n",i);
+
+
+            printf("%d ", secondHead->data);
+            secondHead=secondHead->next;
+            while(secondHead!=NULL){
+            printf("%d ", secondHead->data);
+            secondHead=secondHead->next;
+            if(i==arrayLength){
+                current=NULL;
+            }
+i++;
+            }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+      i++;
+        }
+
+    printf("\n");
+}
+
+int main()
+{
+    //Adds data to the list
+    addNode(1);
+    addNode(2);
+    addNode(3);
+    addNode(4);
+    addNode(5);
+    addNode(6);
+
+    //Displaying list
+
+    display();
+
+    return 0;
+}
