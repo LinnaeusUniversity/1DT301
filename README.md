@@ -1,5 +1,5 @@
 # 1DT301
-## Computer Technology 1
+## [Computer Technology 1](https://lnu.se/en/course/computer-technology-1/vaxjo-international-part-time-autumn-06557/)
 ## The AVR ATMEGA16, PIC16F877 or a similar microprocessor and a specific development card are used in the course. Practical work and lectures are based on the actual
 
 ### microprocessor.
